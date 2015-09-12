@@ -35,5 +35,9 @@ describe('MainController', function () {
       scope.deleteTask(0);
       expect(scope.tasks).toEqual(['Actually understand Angular']);
     });
+
+    it('counts the number of all the tasks', function () {
+      expect(scope.numberOfTasks()).toEqual(2);
+    });
   });
 });

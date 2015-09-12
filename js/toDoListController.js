@@ -8,4 +8,8 @@ angular.module('ToDoList', []).controller('MainController', function($scope) {
   $scope.deleteTask = function (index) {
     $scope.tasks.splice(index, 1);
   };
+
+  $scope.numberOfTasks = function () {
+    return $scope.tasks.length;
+  };
 });
