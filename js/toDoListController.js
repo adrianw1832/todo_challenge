@@ -2,7 +2,7 @@ angular.module('ToDoList', []).controller('MainController', function($scope) {
   $scope.tasks = [];
 
   $scope.addTask = function() {
-    $scope.tasks.push($scope.taskInput);
+    if ($scope.tasks.indexOf($scope.taskInput) === -1) $scope.tasks.push($scope.taskInput);
   };
 
   $scope.deleteTask = function (index) {

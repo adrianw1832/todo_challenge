@@ -31,6 +31,12 @@ describe('MainController', function () {
       expect(scope.tasks).toEqual(tasks);
     });
 
+    it('does not allow duplicate tasks', function () {
+      scope.taskInput = 'Actually understand Angular';
+      scope.addTask();
+      expect(scope.tasks).toEqual(tasks);
+    });
+
     it('deletes tasks', function () {
       scope.deleteTask(0);
       expect(scope.tasks).toEqual(['Actually understand Angular']);
