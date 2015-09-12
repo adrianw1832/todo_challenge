@@ -13,11 +13,12 @@
 <body ng-controller="MainController">
   <form class="form-horizontal">
     <input type="text" ng-model="taskInput" >
-    <button class="btn" ng-click="addTask()">Add</button>
+    <button class="btn btn-primary" ng-click="addTask()">Add</button>
   </form>
 
   <ul class="list-group" ng-repeat="task in tasks">
     <li class="list-group-item">{{ task }}</li>
   </ul>
+  <p class="total">Number of tasks: {{ numberOfTasks() }}</p>
 </body>
 </html>
