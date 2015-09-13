@@ -1,12 +1,23 @@
 # Todo Challenge
 
+[![Build Status](https://travis-ci.org/makersacademy/todo_challenge.svg?branch=master)](https://travis-ci.org/makersacademy/todo_challenge)
+
+What I did:
+----------------
+
+Before I did this challenge, I went through some of the Code Academy tutorial.
+From there and the offical docs, I saw that they were using scope in the
+controller, which is the reason why I used that instead of self. I added the more
+basic functionalities for the to do list first, and then used the docs on checkbox
+and filter to help me complete the more 'complex' features. This project
+
 * Deadline: submit completed pull request by 9am on Monday
 * You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
 
 Steps
 -------
 
-1. Fill out your learning plan self review for the week: https://github.com/makersacademy/learning_plan 
+1. Fill out your learning plan self review for the week: https://github.com/makersacademy/learning_plan
 2. Fork this repo, and clone to your local machine
 3. Complete the following challenge:
 
@@ -64,7 +75,7 @@ Don't worry about deployment, and make sure you read the CONTRIBUTING.md when su
 
 ## CI
 
-Read the `.travis.yml` if any of the steps below don't make sense! 
+Read the `.travis.yml` if any of the steps below don't make sense!
 
 * Make sure you have set up `npm test` in your `package.json` so that it runs your Karma tests
 * Make sure you have your Protractor config file at `e2e/conf.js`
