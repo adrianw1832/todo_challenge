@@ -48,5 +48,10 @@ describe('MainController', function () {
     it('counts the number of all the tasks', function () {
       expect(scope.numberOfTasks()).toEqual(2);
     });
+
+    it('deletes all the completed tasks', function() {
+      scope.clearAll();
+      
+    });
   });
 });
