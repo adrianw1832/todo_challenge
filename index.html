@@ -23,7 +23,7 @@
       </span>
     </form>
 
-    <ul class="list-group" ng-repeat="task in tasks">
+    <ul class="list-group" ng-repeat="task in tasks | filter: task">
       <li class="list-group-item" ng-dblclick="toggleEditMode()">
         <input type="checkbox" class="view pull-left" ng-model="task.done">
         <span class="view">{{ task.name }}</span>
@@ -34,11 +34,11 @@
       </li>
     </ul>
 
-    <p class="total pull-left">Number of tasks: {{ numberOfTasks() }}</p>
+    <p class="total">Number of tasks: {{ (tasks | filter: task).length }}</p>
     <div class="btn-group btn-group-justified">
-      <label class="btn btn-primary all">All</label>
-      <label class="btn btn-info active">Active</label>
-      <label class="btn btn-success complete">Complete</label>
+      <label class="btn btn-primary all" ng-click="task.done=''">All</label>
+      <label class="btn btn-info active" ng-click="task.done=false">Active</label>
+      <label class="btn btn-success completed" ng-click="task.done=true">Completed</label>
       <label class="btn btn-danger clear">Clear All</label>
     </div>
   </section>
