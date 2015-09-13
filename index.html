@@ -11,14 +11,21 @@
   <script src="js/toDoListController.js"></script>
 </head>
 <body ng-controller="MainController">
-  <form class="form-horizontal">
-    <input type="text" ng-model="taskInput" >
-    <button class="btn btn-primary" ng-click="addTask()">Add</button>
-  </form>
-
-  <ul class="list-group" ng-repeat="task in tasks">
-    <li class="list-group-item">{{ task }}</li>
-  </ul>
-  <p class="total">Number of tasks: {{ numberOfTasks() }}</p>
+  <div class="container">
+    <form class="form-horizontal">
+      <input type="text" class="col-md-3" ng-model="taskInput" >
+      <button class="btn btn-primary btn-sm" ng-click="addTask()">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
+    </form>
+    <ul class="list-group" ng-repeat="task in tasks">
+      <input type="checkbox" class="pull-left" ng-model="task.done">
+      <li class="list-unstyled col-md-3">{{ task.name }}</li>
+      <button class="btn btn-danger btn-xs" ng-click="deleteTask($index)">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </ul>
+    <p class="total">Number of tasks: {{ numberOfTasks() }}</p>
+  </div>
 </body>
 </html>

@@ -17,7 +17,8 @@ describe('MainController', function () {
     expect(scope.tasks).toEqual([]);
   });
 
-  var tasks = ["Do my weekend challenege", 'Actually understand Angular'];
+  var tasks = [{name: "Do my weekend challenege", done: false},
+              {name: 'Actually understand Angular', done: false}];
 
   describe('tasks', function () {
     beforeEach(function () {
@@ -31,15 +32,15 @@ describe('MainController', function () {
       expect(scope.tasks).toEqual(tasks);
     });
 
-    it('does not allow duplicate tasks', function () {
-      scope.taskInput = 'Actually understand Angular';
+    it('does not allow blank tasks', function () {
+      scope.taskInput = '';
       scope.addTask();
       expect(scope.tasks).toEqual(tasks);
     });
 
     it('deletes tasks', function () {
       scope.deleteTask(0);
-      expect(scope.tasks).toEqual(['Actually understand Angular']);
+      expect(scope.tasks).toEqual([{name: 'Actually understand Angular', done: false}]);
     });
 
     it('counts the number of all the tasks', function () {
