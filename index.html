@@ -13,9 +13,9 @@
 </head>
 
 <body ng-controller="MainController">
-  <section class="container col-md-4">
+  <section class="container col-md-5">
     <form class="input-group">
-      <input type="text" class="form-control" ng-model="taskInput" placeholder="Enter your task here...">
+      <input type="text" class="form-control" maxlength="35" ng-model="taskInput" placeholder="Enter your task here...">
       <span class="input-group-btn">
         <button class="btn btn-default" ng-click="addTask()">
           <span class="glyphicon glyphicon-plus"></span>
@@ -26,7 +26,7 @@
     <ul class="list-group" ng-repeat="task in tasks | filter: task">
       <li class="list-group-item" ng-dblclick="toggleEditMode()">
         <input type="checkbox" class="view pull-left" ng-model="task.done">
-        <span class="view">{{ task.name }}</span>
+        <span class="view done-{{task.done}}">{{ task.name }}</span>
         <input class="edit form-control" type="text" ng-model="task.name" ng-keyup="editOnEnter(task)">
         <button class="btn btn-danger pull-right" ng-click="deleteTask(task)">
           <span class="glyphicon glyphicon-remove"></span>
@@ -39,7 +39,7 @@
       <label class="btn btn-primary all" ng-click="task.done=''">All</label>
       <label class="btn btn-info active" ng-click="task.done=false">Active</label>
       <label class="btn btn-success completed" ng-click="task.done=true">Completed</label>
-      <label class="btn btn-danger clear">Clear All</label>
+      <label class="btn btn-danger clear" ng-click="clearAll()">Clear All</label>
     </div>
   </section>
 

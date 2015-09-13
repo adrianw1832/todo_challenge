@@ -22,4 +22,10 @@ angular.module('ToDoList', []).controller('MainController', function($scope) {
   $scope.editOnEnter = function(task){
     if(event.keyCode == 13 && task.name) $scope.toggleEditMode();
   };
+
+  $scope.clearAll = function () {
+    for (var i = 0; i < $scope.tasks.length; i++) {
+      if ($scope.tasks[i].done) { $scope.tasks.splice(i, 1); i--; }
+    }
+  };
 });

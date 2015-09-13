@@ -1,3 +1,11 @@
+.container {
+  margin-top: 5%;
+  display: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+
 .input-group {
   margin-bottom: 0px;
   width: 100%;
@@ -35,12 +43,19 @@ input[type="checkbox"] {
 
 .list-group li.editing .edit {
   display: inline-block;
+  width: 92%;
   height: 35px;
   margin: 0;
 }
 
+.list-group li .done-true {
+  color: lightgrey;
+  text-decoration: line-through;
+}
+
 .total {
-  margin-top: 2.5%;
+  margin-top: 5%;
   font-size: 15px;
   width: 100%;
+  font-weight: bold;
 }
