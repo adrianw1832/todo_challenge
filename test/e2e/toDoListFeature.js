@@ -1,6 +1,7 @@
 describe('To Do List', function() {
   var taskInput = element(by.model('taskInput'));
-  var addTaskButton = element(by.className('btn-primary'));
+  var editInput = element(by.model('task.name'));
+  var addTaskButton = element(by.className('btn-success'));
   var deleteTaskButton = element.all(by.className('btn-danger'));
   var taskList =  element.all(by.css('li'));
   var totalCount = element(by.className('total'));
@@ -44,8 +45,17 @@ describe('To Do List', function() {
   it('each task has a checkbox', function() {
     taskInput.sendKeys('Do my weekend challenege');
     addTaskButton.click();
-    expect(checkBox.isSelected()).toBeFalsy();
+    expect(checkBox.isSelected()).toBe(false);
     checkBox.click();
-    expect(checkBox.isSelected()).toBeTruthy();
+    expect(checkBox.isSelected()).toBe(true);
+  });
+
+  it('allows the user to edit the task', function() {
+    taskInput.sendKeys('Do my weekend challenege');
+    addTaskButton.click();
+    browser.actions().doubleClick(taskList.get(0)).perform();
+    editInput.sendKeys(' quickly');
+    editInput.sendKeys(protractor.Key.ENTER);
+    expect(taskList.get(0).getText()).toEqual('Do my weekend challenege quickly');
   });
 });

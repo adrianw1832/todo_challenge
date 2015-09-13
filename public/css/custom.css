@@ -1,0 +1,46 @@
+.list-group {
+  margin-bottom: 0.5px;
+}
+
+form input {
+  width: 89.9%;
+  height: 34px;
+  font-size: 24px;
+  padding-bottom: 2px;
+  padding-left: 5px
+}
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+}
+
+.list-group li {
+  height: 34px;
+  font-size: 28px;
+  padding: 0px;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.list-group li .edit {
+  display: none;
+}
+
+.list-group li.editing .view {
+  display: none;
+}
+
+.list-group li.editing .edit {
+  display: inline-block;
+  width: 89.9%;
+  height: 34px;
+  margin: 0;
+}
+
+.total {
+  margin-top: 2.5%;
+  font-size: 15px;
+}
