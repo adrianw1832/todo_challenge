@@ -9,31 +9,39 @@
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="js/app.js"></script>
   <script src="js/toDoListController.js"></script>
 </head>
 
 <body ng-controller="MainController">
   <section class="container col-md-4">
-    <form class="form-horizontal">
-      <input type="text" ng-model="taskInput">
-      <button class="btn btn-success pull-right" ng-click="addTask()">
-        <span class="glyphicon glyphicon-plus"></span>
-      </button>
+    <form class="input-group">
+      <input type="text" class="form-control" ng-model="taskInput" placeholder="Enter your task here...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" ng-click="addTask()">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      </span>
     </form>
+
     <ul class="list-group" ng-repeat="task in tasks">
-      <li class="list-unstyled" ng-dblclick="toggleEditMode()">
-        <input type="checkbox" class="checkbox view pull-left" ng-model="task.done">
+      <li class="list-group-item" ng-dblclick="toggleEditMode()">
+        <input type="checkbox" class="view pull-left" ng-model="task.done">
         <span class="view">{{ task.name }}</span>
-        <input class="edit" type="text" ng-model="task.name" ng-keyup="editOnEnter(task)">
-        <button class="btn btn-danger pull-right" ng-click="deleteTask($index)">
+        <input class="edit form-control" type="text" ng-model="task.name" ng-keyup="editOnEnter(task)">
+        <button class="btn btn-danger pull-right" ng-click="deleteTask(task)">
           <span class="glyphicon glyphicon-remove"></span>
         </button>
       </li>
     </ul>
-    <span class="total pull-left">Number of tasks: {{ numberOfTasks() }}</span>
-  </section>
 
+    <p class="total pull-left">Number of tasks: {{ numberOfTasks() }}</p>
+    <div class="btn-group btn-group-justified">
+      <label class="btn btn-primary all">All</label>
+      <label class="btn btn-info active">Active</label>
+      <label class="btn btn-success complete">Complete</label>
+      <label class="btn btn-danger clear">Clear All</label>
+    </div>
+  </section>
 
 </body>
 

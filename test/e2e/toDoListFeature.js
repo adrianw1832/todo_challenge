@@ -6,6 +6,7 @@ describe('To Do List', function() {
   var taskList =  element.all(by.css('li'));
   var totalCount = element(by.className('total'));
   var checkBox = element(by.model('task.done'));
+  var allFilter = element(by.css('.all'));
 
   beforeEach(function() {
     browser.get('http://localhost:8080');
@@ -15,11 +16,12 @@ describe('To Do List', function() {
     expect(browser.getTitle()).toEqual('ToDoList');
   });
 
-  it('shows the added tasks', function() {
+  it('shows the added tasks with the all filter', function() {
     taskInput.sendKeys('Do my weekend challenege');
     addTaskButton.click();
     taskInput.sendKeys('Actually understand Angular');
     addTaskButton.click();
+    allFilter.click();
     expect(taskList.get(0).getText()).toEqual('Do my weekend challenege');
     expect(taskList.get(1).getText()).toEqual('Actually understand Angular');
   });
@@ -57,5 +59,14 @@ describe('To Do List', function() {
     editInput.sendKeys(' quickly');
     editInput.sendKeys(protractor.Key.ENTER);
     expect(taskList.get(0).getText()).toEqual('Do my weekend challenege quickly');
+  });
+
+  it('does not allow the user to edit task to no description', function() {
+    taskInput.sendKeys('Do my weekend challenege');
+    addTaskButton.click();
+    browser.actions().doubleClick(taskList.get(0)).perform();
+    editInput.sendKeys('');
+    editInput.sendKeys(protractor.Key.ENTER);
+    expect(taskList.get(0).getText()).toEqual('Do my weekend challenege');
   });
 });

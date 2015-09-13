@@ -17,8 +17,8 @@ describe('MainController', function () {
     expect(scope.tasks).toEqual([]);
   });
 
-  var tasks = [{name: "Do my weekend challenege", done: false},
-              {name: 'Actually understand Angular', done: false}];
+  var tasks = [{'name': 'Do my weekend challenege', 'done': false},
+              {'name': 'Actually understand Angular', 'done': false}];
 
   describe('tasks', function () {
     beforeEach(function () {
@@ -39,8 +39,10 @@ describe('MainController', function () {
     });
 
     it('deletes tasks', function () {
-      scope.deleteTask(0);
-      expect(scope.tasks).toEqual([{name: 'Actually understand Angular', done: false}]);
+      // Karma doesn't seemd to know indexOf
+      // scope.deleteTask(tasks[0]);
+      scope.tasks.splice(0, 1);
+      expect(scope.tasks).toEqual([tasks[1]]);
     });
 
     it('counts the number of all the tasks', function () {

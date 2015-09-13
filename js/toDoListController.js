@@ -2,11 +2,12 @@ angular.module('ToDoList', []).controller('MainController', function($scope) {
   $scope.tasks = [];
 
   $scope.addTask = function() {
-    if ($scope.taskInput) $scope.tasks.push({name: $scope.taskInput, done: false});
+    if ($scope.taskInput) $scope.tasks.push({'name': $scope.taskInput, 'done': false});
     $scope.taskInput = null;
   };
 
-  $scope.deleteTask = function (index) {
+  $scope.deleteTask = function (task) {
+    var index = $scope.tasks.indexOf(task);
     $scope.tasks.splice(index, 1);
   };
 
@@ -19,8 +20,6 @@ angular.module('ToDoList', []).controller('MainController', function($scope) {
   };
 
   $scope.editOnEnter = function(task){
-    if(event.keyCode == 13 && task.name){
-        $scope.toggleEditMode();
-    }
+    if(event.keyCode == 13 && task.name) $scope.toggleEditMode();
   };
 });

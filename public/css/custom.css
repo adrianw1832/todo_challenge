@@ -1,26 +1,26 @@
+.input-group {
+  margin-bottom: 0px;
+  width: 100%;
+}
+
 .list-group {
-  margin-bottom: 0.5px;
+  margin-bottom: 0px;
 }
 
-form input {
-  width: 89.9%;
-  height: 34px;
-  font-size: 24px;
-  padding-bottom: 2px;
-  padding-left: 5px
+input.form-control {
+  font-size: 20px;
 }
 
-.checkbox {
-  width: 30px;
-  height: 30px;
-  padding: 2px;
+input[type="checkbox"] {
+  width: 40px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
 }
 
 .list-group li {
-  height: 34px;
-  font-size: 28px;
-  padding: 0px;
-  line-height: 1em;
+  height: 35px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
 }
@@ -35,12 +35,12 @@ form input {
 
 .list-group li.editing .edit {
   display: inline-block;
-  width: 89.9%;
-  height: 34px;
+  height: 35px;
   margin: 0;
 }
 
 .total {
   margin-top: 2.5%;
   font-size: 15px;
+  width: 100%;
 }
