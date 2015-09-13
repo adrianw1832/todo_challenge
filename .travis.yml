@@ -1,7 +1,6 @@
 script:
-  - gulp test
-  - webdriver-manager start
-  - gulp e2e
+  - npm test --single-run
+  - node_modules/.bin/protractor ./test/e2e/conf.js --browser=firefox
 language: node_js
 node_js:
   - "0.10"
