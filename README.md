@@ -1,6 +1,6 @@
 # Todo Challenge
 
-[![Build Status](https://travis-ci.org/makersacademy/todo_challenge.svg?branch=master)](https://travis-ci.org/makersacademy/todo_challenge)
+[![Build Status](https://travis-ci.org/adrianw1832/todo_challenge.svg?branch=master)](https://travis-ci.org/adrianw1832/todo_challenge)
 
 What I did:
 ----------------
