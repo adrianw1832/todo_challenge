@@ -1,15 +1,35 @@
-# Todo Challenge
-
+##To do list challenege
 [![Build Status](https://travis-ci.org/adrianw1832/todo_challenge.svg?branch=master)](https://travis-ci.org/adrianw1832/todo_challenge)
 
-What I did:
-----------------
-
+This project is from the week 8 weekend challenge of the Makers Academy course.
 Before I did this challenge, I went through some of the Code Academy tutorial.
-From there and the offical docs, I saw that they were using scope in the
-controller, which is the reason why I used that instead of self. I added the more
-basic functionalities for the to do list first, and then used the docs on checkbox
-and filter to help me complete the more 'complex' features. This project
+From there and the official docs, I saw that they were using scope in the
+controller, which is the reason why I used that instead of self. I added the
+more basic functionalities for the to do list first, and then used the docs on
+checkbox and filter to help me complete the more 'complex' features. This
+project definitely helped me understand Angular and Bootstrap more.
+
+##Challenges
+
+Changing syntax to using self took a little bit of time to get used to at the
+beginning. There weren't any particularly difficult challenges, just some
+getting used to Angular and looking up a lot of documentation to figure out the
+extent it can do.
+
+##Technologies used
+
+Angular JS
+
+Karma, Protractor
+
+##How to install
+
+Clone the repo and run open index.html in the terminal to run the app.
+
+Run in the terminal webdriver-manager start, followed by gulp e2e to run the
+Protractor tests, or gulp test to run the Karma tests.
+
+##Instructions
 
 * Deadline: submit completed pull request by 9am on Monday
 * You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
